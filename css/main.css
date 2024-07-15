@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "NanumSquare", sans-serif !important;
 }
 html,
 body,
@@ -121,6 +122,7 @@ header {
   top: 0;
   line-height: 120px;
   clear: both;
+  /* z-index: 100; */
 }
 header .logo {
   display: inline-block;
@@ -157,4 +159,185 @@ header nav .gnb li a::after {
 header nav .gnb li a:hover::after,
 header nav .gnb li a:focus::after {
   width: 100%;
+}
+/* visual */
+section.visual {
+  margin-top: 120px;
+  padding-bottom: 50px;
+  position: relative;
+}
+section.visual::before {
+  content: "";
+  width: 53%;
+  height: 400px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #f0f0f0;
+}
+section.visual .img {
+  width: 94%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+section.visual .img img {
+  width: 100%;
+}
+section.visual .title {
+  position: absolute;
+  top: 40%;
+  left: 8%;
+  color: #fff;
+}
+section.visual .title h2 {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+section.visual .title p {
+  font-size: 20px;
+  font-weight: 300;
+}
+section.visual .menu {
+  position: absolute;
+  bottom: 15%;
+  left: 8%;
+}
+section.visual .menu li {
+  float: left;
+  margin-right: 60px;
+}
+section.visual .menu li a {
+  display: block;
+  color: #fff;
+  clear: both;
+}
+section.visual .menu li a p {
+  float: left;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.6;
+}
+section.visual .menu li a p span {
+  display: block;
+  font-weight: 200;
+  font-size: 15px;
+  color: #aaa;
+}
+section.visual .menu li a .arrow {
+  display: block;
+  float: right;
+  margin-top: 10px;
+  margin-left: 20px;
+  position: relative;
+  z-index: 1;
+}
+section.visual .menu li a .arrow::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff79;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: -1;
+  transition: all 0.3s;
+}
+/* a 안의 요소들로 인해 부모인 a가 높이값을 잃었을때, a의 가상클래스에 clear:both; display: block;을 하면 부모가 높이값을 되찾음 */
+section.visual .menu li a::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+section.visual .menu li a:hover .arrow::before,
+section.visual .menu li a:hover .arrow:focus {
+  right: 0;
+  top: 0;
+}
+section.visual .img .mask {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.26);
+}
+section.visual .img .mask.a {
+  left: 0%;
+}
+section.visual .img .mask.b {
+  left: 25%;
+}
+section.visual .img .mask.c {
+  left: 50%;
+}
+section.visual .img .mask.d {
+  left: 75%;
+}
+
+@keyframes mask {
+  0% {
+    width: 25%;
+    background-color: #000;
+  }
+  50% {
+    width: 25%;
+    background-color: #000;
+  }
+  99% {
+    background-color: #000;
+  }
+}
+
+section.visual .img .mask.a {
+  animation: mask 0.4s;
+}
+section.visual .img .mask.b {
+  animation: mask 0.6s;
+}
+section.visual .img .mask.c {
+  animation: mask 0.8s;
+}
+section.visual .img .mask.d {
+  animation: mask 1s;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section.visual .title h2 {
+  animation: slide-up 1.5s;
+}
+section.visual .title p {
+  animation: slide-up 1.7s;
+}
+section.visual .menu {
+  animation: slide-up 1.9s;
+}
+section.visual .img img {
+  transform: scale(1);
+  animation: scale-ani 2s;
+}
+
+@keyframes scale-ani {
+  0% {
+    transform: scale(1.3);
+  }
+  30% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
