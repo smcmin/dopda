@@ -122,7 +122,7 @@ header {
   top: 0;
   line-height: 120px;
   clear: both;
-  /* z-index: 100; */
+  z-index: 100;
 }
 header .logo {
   display: inline-block;
@@ -340,4 +340,228 @@ section.visual .img img {
   100% {
     transform: scale(1);
   }
+}
+
+/* about */
+section.about {
+  width: 95%;
+  margin: 40px auto;
+  text-align: center;
+  position: relative;
+}
+section.about img {
+  width: 100%;
+}
+section.about .inner {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section.about .inner h2 {
+  font-size: 30px;
+  color: #fff;
+  font-weight: normal;
+}
+section.about .inner .line {
+  width: 40%;
+  margin: 80px auto 30px;
+  position: relative;
+}
+section.about .inner .line span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.671);
+}
+section.about .inner .line li {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+}
+section.about .inner .line li.a {
+  left: 0;
+  top: -2px;
+}
+section.about .inner .line li.b {
+  left: 50%;
+  transform: translateX(-50%);
+  top: -2px;
+}
+section.about .inner .line li.c {
+  right: 0;
+  top: -2px;
+}
+section.about .inner .line li::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ffffffa2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* transform: translate(-50%, -50%); */
+  animation: dot 2s infinite;
+  margin-top: -3px;
+  margin-left: -3px;
+}
+
+@keyframes dot {
+  100% {
+    opacity: 1;
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+section.about .inner ul {
+  width: 60%;
+  margin: 0 auto;
+}
+section.about .inner ul li {
+  color: #c5c5c5;
+  float: left;
+  width: 33.333%;
+  font-size: 17px;
+  font-weight: 100;
+}
+section.about .inner ul li h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  color: #fff;
+}
+section.about .inner h2 {
+  animation: slide-up 0.8s;
+}
+section.about .inner .line span {
+  animation: opcity-ani 0.8s;
+}
+@keyframes opcity-ani {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+}
+section.about .inner .line li.a {
+  animation: opcity-ani 0.8s;
+}
+section.about .inner .line li.b {
+  animation: opcity-ani 1.2s;
+}
+section.about .inner .line li.c {
+  animation: opcity-ani 1.6s;
+}
+section.about .inner ul li {
+  animation: slide-up2 2.4s;
+}
+section.about .inner ul li:nth-child(2) {
+  animation: slide-up2 2.8s;
+}
+section.about .inner ul li:nth-child(3) {
+  animation: slide-up2 3.2s;
+}
+@keyframes slide-up2 {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+
+/* premium */
+section.premium {
+  width: 95%;
+  margin: 40px auto;
+  padding: 100px 0;
+  height: 1020px;
+  background: url(../img/con2_bg.jpg) no-repeat center / cover;
+  position: relative;
+}
+section.premium .txt-img {
+  position: absolute;
+  left: 0;
+  top: 20%;
+  display: block;
+  width: 100%;
+  animation: width-ani 1.5s;
+  overflow: hidden;
+  /* overflow hidden을 주는 이유는 0~
+  30%까지 넘치는 부분을 보이지 않도록 했기 때문 */
+}
+@keyframes width-ani {
+  0% {
+    width: 0%;
+  }
+  30% {
+    width: 0%;
+  }
+}
+section.premium .title {
+  position: absolute;
+  left: 8%;
+  top: 35%;
+}
+section.premium .title h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+section.premium .title p {
+  font-size: 19px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+section.premium .title a {
+  font-size: 24px;
+  display: inline-block;
+  position: relative;
+}
+section.premium .title a:before {
+  content: "";
+  width: 80px;
+  height: 15px;
+  background-color: rgba(0, 0, 0, 0.08);
+  position: absolute;
+  bottom: 0;
+  transition: 0.3s;
+}
+section.premium .title a:hover:before,
+section.premium .title a:focus:before {
+  width: 0%;
+}
+section.premium .banner li {
+  position: absolute;
+  box-shadow: 5px 6px 15px #8a8a8a6b;
+  width: 15%;
+}
+section.premium .banner li img {
+  width: 100%;
+}
+section.premium .banner li:nth-child(1) {
+  left: 45%;
+  top: 15%;
+  animation: slide-up 1.2s;
+}
+section.premium .banner li:nth-child(2) {
+  left: 37%;
+  top: 50%;
+  animation: slide-up 1.5s;
+}
+section.premium .banner li:nth-child(3) {
+  left: 55%;
+  top: 62%;
+  animation: slide-up 1.7s;
+}
+section.premium .banner li:nth-child(4) {
+  right: 2%;
+  width: 32%;
+  max-width: 580px;
+  animation: slide-up 1.9s;
 }
