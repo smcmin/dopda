@@ -1,3 +1,7 @@
+/* font */
+/* font */
+@import url("https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css");
+
 /* reset */
 * {
   margin: 0;
@@ -96,9 +100,6 @@ em,
 i {
   font-style: normal;
 }
-
-/* font */
-@import url("https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css");
 
 /*layout*/
 body {
@@ -564,4 +565,149 @@ section.premium .banner li:nth-child(4) {
   width: 32%;
   max-width: 580px;
   animation: slide-up 1.9s;
+}
+
+/* global */
+section.global {
+  width: 95%;
+  margin: 40px auto 0;
+  padding: 40px 0;
+  text-align: center;
+  position: relative;
+}
+section.global::before {
+  content: "";
+  width: 100%;
+  height: 45%;
+  background-color: #eee;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+section.global .title h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+section.global .title p {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 50px;
+}
+section.global ul {
+  overflow: hidden;
+  padding: 50px 0 0;
+}
+section.global ul li {
+  float: left;
+  width: 25%;
+  padding: 15px;
+}
+section.global ul li a {
+  display: block;
+}
+section.global ul li a .img {
+  box-shadow: 10px 10px 10px #747474b6;
+  position: relative;
+  transition: 0.3s;
+}
+section.global ul li a .img::after {
+  content: "VIEW";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(44, 35, 28, 0.8);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  font-size: 22px;
+  padding-top: 200px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: 0.2s;
+}
+section.global ul li a:hover .img::after,
+section.global ul li a:focus .img::after {
+  opacity: 1;
+}
+
+section.global ul li:nth-child(1),
+section.global ul li:nth-child(3) {
+  margin-top: -50px;
+}
+section.global ul li a:hover .img,
+section.global ul li a:focus .img {
+  transform: translate(-8px, -8px);
+  box-shadow: 15px 18px 10px #74747483;
+}
+
+section.global ul li a h3 {
+  font-size: 22px;
+  margin: 40px 0 15px;
+}
+section.global ul li a h3 span {
+  display: block;
+  font-size: 18px;
+  font-weight: normal;
+  color: #888;
+}
+section.global ul li a p {
+  font-size: 17px;
+}
+section.global ul li {
+  animation: slide-up 1s;
+}
+section.global ul li:nth-child(1) {
+  animation: slide-up 1s;
+}
+section.global ul li:nth-child(2) {
+  animation: slide-up 1.4s;
+}
+section.global ul li:nth-child(3) {
+  animation: slide-up 1.7s;
+}
+section.global ul li:nth-child(4) {
+  animation: slide-up 2s;
+}
+
+/* footer */
+footer {
+  padding: 80px 0 0;
+  text-align: center;
+}
+footer .sns li {
+  display: inline-block;
+  margin-right: 30px;
+}
+footer .sns li:last-child {
+  margin-right: 0;
+}
+footer .footer-logo {
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: -4px;
+  color: #39422b;
+  margin: 40px 0;
+}
+footer ul li {
+  font-size: 17px;
+  line-height: 1.4;
+}
+footer ul li .copyright {
+  font-size: 15px;
+  font-weight: 100;
+  margin-top: 20px;
+  display: block;
+  color: #888;
+}
+footer .box {
+  background: url(../img/bottom_bg.jpg) no-repeat center / cover;
+  margin-top: 80px;
+  padding: 150px 0;
+}
+footer .box h2 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: normal;
+  animation: slide-up 1s;
 }
