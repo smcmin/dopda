@@ -180,7 +180,7 @@ section.visual .img {
   width: 94%;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 section.visual .img img {
   width: 100%;
@@ -263,6 +263,9 @@ section.visual .img .mask {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.26);
 }
+/* 마스크에 .slick-active 을 붙여야 마스크애니메이션이 실행됨 
+  왜냐하면 리스트 마다(슬라이드마다) .slick-active 가 붙어서 
+  fade 애니메이션이 진행되기때문 */
 section.visual .img .mask.a {
   left: 0%;
 }
@@ -290,16 +293,16 @@ section.visual .img .mask.d {
   }
 }
 
-section.visual .img .mask.a {
+section.visual  .slick-active .img .mask.a {
   animation: mask 0.4s;
 }
-section.visual .img .mask.b {
+section.visual  .slick-active .img .mask.b {
   animation: mask 0.6s;
 }
-section.visual .img .mask.c {
+section.visual .slick-active  .img .mask.c {
   animation: mask 0.8s;
 }
-section.visual .img .mask.d {
+section.visual  .slick-active .img .mask.d {
   animation: mask 1s;
 }
 
@@ -317,18 +320,18 @@ section.visual .img .mask.d {
   }
 }
 
-section.visual .title h2 {
+section.visual .slick-active .title h2 {
   animation: slide-up 1.5s;
 }
-section.visual .title p {
+section.visual .slick-active .title p {
   animation: slide-up 1.7s;
 }
-section.visual .menu {
+section.visual  .menu {
   animation: slide-up 1.9s;
 }
-section.visual .img img {
+section.visual .slick-active .img-box img {
   transform: scale(1);
-  animation: scale-ani 2s;
+  animation: scale-ani 3s;
 }
 
 @keyframes scale-ani {
@@ -435,10 +438,10 @@ section.about .inner ul li h3 {
   font-weight: normal;
   color: #fff;
 }
-section.about .inner h2 {
+section.about .inner.motion h2 {
   animation: slide-up 0.8s;
 }
-section.about .inner .line span {
+section.about .inner.motion .line span {
   animation: opcity-ani 0.8s;
 }
 @keyframes opcity-ani {
@@ -449,22 +452,22 @@ section.about .inner .line span {
     opacity: 0;
   }
 }
-section.about .inner .line li.a {
+section.about .inner.motion .line li.a {
   animation: opcity-ani 0.8s;
 }
-section.about .inner .line li.b {
+section.about .inner.motion .line li.b {
   animation: opcity-ani 1.2s;
 }
-section.about .inner .line li.c {
+section.about .inner.motion .line li.c {
   animation: opcity-ani 1.6s;
 }
-section.about .inner ul li {
+section.about .inner.motion ul li {
   animation: slide-up2 2.4s;
 }
-section.about .inner ul li:nth-child(2) {
+section.about .inner.motion ul li:nth-child(2) {
   animation: slide-up2 2.8s;
 }
-section.about .inner ul li:nth-child(3) {
+section.about .inner.motion ul li:nth-child(3) {
   animation: slide-up2 3.2s;
 }
 @keyframes slide-up2 {
@@ -486,13 +489,13 @@ section.premium {
   background: url(../img/con2_bg.jpg) no-repeat center / cover;
   position: relative;
 }
-section.premium .txt-img {
+section.premium .txt-img.motion {
   position: absolute;
   left: 0;
   top: 20%;
   display: block;
   width: 100%;
-  animation: width-ani 1.5s;
+  animation: width-ani 2.5s;
   overflow: hidden;
   /* overflow hidden을 주는 이유는 0~
   30%까지 넘치는 부분을 보이지 않도록 했기 때문 */
@@ -504,6 +507,10 @@ section.premium .txt-img {
   30% {
     width: 0%;
   }
+  100% {
+    width: 100%;
+  }
+  
 }
 section.premium .title {
   position: absolute;
@@ -545,22 +552,22 @@ section.premium .banner li {
 section.premium .banner li img {
   width: 100%;
 }
-section.premium .banner li:nth-child(1) {
+section.premium .banner li:nth-child(1).motion {
   left: 45%;
   top: 15%;
   animation: slide-up 1.2s;
 }
-section.premium .banner li:nth-child(2) {
+section.premium .banner li:nth-child(2).motion {
   left: 37%;
   top: 50%;
   animation: slide-up 1.5s;
 }
-section.premium .banner li:nth-child(3) {
+section.premium .banner li:nth-child(3).motion {
   left: 55%;
   top: 62%;
   animation: slide-up 1.7s;
 }
-section.premium .banner li:nth-child(4) {
+section.premium .banner li:nth-child(4).motion {
   right: 2%;
   width: 32%;
   max-width: 580px;
@@ -610,6 +617,8 @@ section.global ul li a .img {
   box-shadow: 10px 10px 10px #747474b6;
   position: relative;
   transition: 0.3s;
+  width: 420px;
+  margin: 0 auto;
 }
 section.global ul li a .img::after {
   content: "VIEW";
@@ -654,19 +663,19 @@ section.global ul li a h3 span {
 section.global ul li a p {
   font-size: 17px;
 }
-section.global ul li {
+section.global.motion ul li {
   animation: slide-up 1s;
 }
-section.global ul li:nth-child(1) {
+section.global.motion ul li:nth-child(1) {
   animation: slide-up 1s;
 }
-section.global ul li:nth-child(2) {
+section.global.motion ul li:nth-child(2) {
   animation: slide-up 1.4s;
 }
-section.global ul li:nth-child(3) {
+section.global.motion ul li:nth-child(3) {
   animation: slide-up 1.7s;
 }
-section.global ul li:nth-child(4) {
+section.global.motion ul li:nth-child(4) {
   animation: slide-up 2s;
 }
 
@@ -705,9 +714,51 @@ footer .box {
   margin-top: 80px;
   padding: 150px 0;
 }
-footer .box h2 {
+footer .box.motion h2 {
   color: #fff;
   font-size: 22px;
   font-weight: normal;
   animation: slide-up 1s;
+}
+
+/* fix header on class */
+header.on {
+  background-color: #fff;
+
+}
+
+/* slick css */
+section.visual .img .img-box {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+/* 페이지 숫자 이미지 */
+section.visual .img .page {
+  position: absolute;
+  right: -43px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* visual slick dots 슬릭 슬라이드 도트 */
+.slick-dots {
+  position: absolute;
+  right: 4.5%;
+ bottom: 30px;
+}
+.slick-dots li button {
+  text-indent: -999px;
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+    border: none;
+  cursor: pointer;
+}
+.slick-dots li.slick-active button {
+  background-color: #39312b;
+}
+/* slick slider title color 변경 */
+section.visual .slide .title-color {
+  color: #39312b;
 }
