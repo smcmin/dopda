@@ -489,16 +489,19 @@ section.premium {
   background: url(../img/con2_bg.jpg) no-repeat center / cover;
   position: relative;
 }
-section.premium .txt-img.motion {
+section.premium .txt-img {
   position: absolute;
   left: 0;
   top: 20%;
   display: block;
   width: 100%;
-  animation: width-ani 2.5s;
+  
   overflow: hidden;
   /* overflow hidden을 주는 이유는 0~
   30%까지 넘치는 부분을 보이지 않도록 했기 때문 */
+}
+section.premium .txt-img.motion {
+  animation: width-ani 2.5s;
 }
 @keyframes width-ani {
   0% {
@@ -926,5 +929,104 @@ header .close {
   }
   section.global ul li a .img::after {
     display: none;
+  }
+}
+
+/* 반응형 max width 950 */
+@media screen and (max-width: 950px) {
+  /* visual */
+  section.visual .menu {
+    display: none;
+  }
+  section.visual  .img {
+    width: 92%;
+  }
+  /* about */
+  section.about {
+    height: 480px;
+  }
+  section.about .inner .line {
+    width: 65%;
+  }
+  section.about .inner ul {
+    width: 97%;
+  }
+  section.about .inner  ul li {
+    font-size: 12px;
+  }
+  /* premium */
+  section.premium .title {
+    width: 100%;
+    left: 0;
+    text-align: center;
+    top: 20px;
+  }
+  section.premium .txt-img {
+    height: 60px;
+    top: 28%;
+    left: 20px;
+  }
+  section.premium .txt-img img {
+    height: 100%;
+  }
+  section.premium .banner {
+    position: relative;
+    width: 80%;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    height: 500px;
+  }
+  
+  section.premium .banner li:nth-child(1).motion {
+    width: 22%;
+    left: 15%;
+  }
+  section.premium .banner li:nth-child(2).motion {
+    width: 22%;
+    left: 8%;
+  }
+  section.premium .banner li:nth-child(3).motion {
+    left: 38%;
+    width: 22%;
+  }
+  section.premium .banner li:nth-child(4).motion {
+    left: 50%;
+    width: 48%;
+  }
+  /* global */
+  section.global ul {
+    width: 95%;
+    margin: 0 auto;
+  }
+  section.global ul li {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  section.global ul li a h3 {
+    margin: 20px 0 10px;
+  }
+  section.global:before {
+    height: 48%;
+  }
+  /* footer */
+  footer {
+    padding-top: 50px;
+  }
+  footer .footer-logo {
+    font-size: 28px;
+  }
+  footer ul li {
+    font-size: 14px;
+  }
+  footer ul .copyright {
+    margin-top: 10px;
+  }
+  footer .box {
+    padding: 80px 0;
+    margin-top: 50px;
+  }
+  footer .box h2 {
+    font-size: 17px;
   }
 }
