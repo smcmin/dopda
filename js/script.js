@@ -42,4 +42,19 @@ $(function () {
   });
 });
 
-//
+// mobile navi script
+$(function () {
+  $("header .open").on("click", function () {
+    $("body").css({ overflow: "hidden" });
+    $("header .bg").css({ display: "block" });
+    $("header nav").addClass("on");
+  });
+
+  $("header .close, header .bg").on("click", function () {
+    $("body").css({
+      overflow: "auto",
+    });
+    $("header .bg").css({ display: "none" });
+    $("header nav").removeClass("on");
+  });
+});
