@@ -617,7 +617,7 @@ section.global ul li a {
 }
 section.global ul li a .img {
   box-shadow: 10px 10px 10px #747474b6;
-  position: relative;
+  /* position: relative; */
   transition: 0.3s;
   width: 100%;
   margin: 0 auto;
@@ -625,25 +625,7 @@ section.global ul li a .img {
 section.global ul li a .img img {
   width: 100%;
 }
-section.global ul li a .img::after {
-  content: "VIEW";
-  width: 100%;
-  height: 100%;
-  background-color: rgb(44, 35, 28, 0.8);
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #fff;
-  font-size: 22px;
-  padding-top: 200px;
-  box-sizing: border-box;
-  opacity: 0;
-  transition: 0.2s;
-}
-section.global ul li a:hover .img::after,
-section.global ul li a:focus .img::after {
-  opacity: 1;
-}
+
 
 section.global ul li:nth-child(1),
 section.global ul li:nth-child(3) {
@@ -920,9 +902,6 @@ header .close {
   }
   section.global ul li a p {
     font-size: 13px;
-  }
-  section.global ul li a .img::after {
-    display: none;
   }
 }
 
